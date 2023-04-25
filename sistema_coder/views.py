@@ -21,3 +21,13 @@ def saludar_a_usuario(request, nombre):
     texto = f"Hola {nombre}"
     pagina_html = HttpResponse(texto)
     return pagina_html
+
+
+def saludar_con_html(request):
+    contexto = {}
+    http_responde = render(
+        request=request,
+        template_name='control_estudios/base.html',
+        context=contexto,
+    )
+    return http_responde
