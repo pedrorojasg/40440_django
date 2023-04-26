@@ -24,7 +24,9 @@ def saludar_a_usuario(request, nombre):
 
 
 def saludar_con_html(request):
-    contexto = {}
+    contexto = {
+        "usuario": "Pedro"
+    }
     http_responde = render(
         request=request,
         template_name='control_estudios/base.html',

@@ -1,0 +1,14 @@
+{% extends "control_estudios/base.html" %}
+
+{% block contenido %}
+<section>
+  <div>
+    <h1>Lista de estudiantes</h1>
+    <ul>
+    {% for student in estudiantes %}
+      <li>{{ student.apellido }}, {{ student.nombre }}</li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock contenido %}
