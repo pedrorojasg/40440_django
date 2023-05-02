@@ -10,12 +10,12 @@ def listar_estudiantes(request):
             {"nombre": "Carlos", "apellido": "Perez"},
         ]
     }
-    http_responde = render(
+    http_response = render(
         request=request,
         template_name='control_estudios/lista_estudiantes.html',
         context=contexto,
     )
-    return http_responde
+    return http_response
 
 
 def listar_cursos(request):
@@ -26,9 +26,9 @@ def listar_cursos(request):
             {"nombre": "Diseño", "comision": "1001"},
         ]
     }
-    http_responde = render(
+    http_response = render(
         request=request,
         template_name='control_estudios/lista_cursos.html',
         context=contexto,
     )
-    return http_responde
+    return http_response

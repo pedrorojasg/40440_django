@@ -4,6 +4,8 @@
 <section>
   <div>
     <h1>Lista de estudiantes</h1>
+    {% block contenido_estudiantes %}
+    {% endblock contenido_estudiantes %}
     <ul>
     {% for student in estudiantes %}
       <li>{{ student.apellido }}, {{ student.nombre }}</li>

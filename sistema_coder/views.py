@@ -33,3 +33,13 @@ def saludar_con_html(request):
         context=contexto,
     )
     return http_responde
+
+
+def inicio(request):
+    contexto = {}
+    http_response = render(
+        request=request,
+        template_name='control_estudios/index.html',
+        context=contexto,
+    )
+    return http_response
