@@ -22,7 +22,7 @@ from sistema_coder.views import saludar, saludar_con_fecha, saludar_a_usuario,\
 
 
 urlpatterns = [
-    path("", inicio),
+    path("", inicio, name="inicio"),
     path("admin/", admin.site.urls),
     path("estudios/", include("control_estudios.urls")),
     path("saludo/", saludar),
