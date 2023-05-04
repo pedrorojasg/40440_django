@@ -25,3 +25,13 @@ def listar_cursos(request):
         context=contexto,
     )
     return http_response
+
+
+def crear_curso(request):
+    contexto = {}
+    http_response = render(
+        request=request,
+        template_name='control_estudios/formulario_curso_a_mano.html',
+        context=contexto,
+    )
+    return http_response
