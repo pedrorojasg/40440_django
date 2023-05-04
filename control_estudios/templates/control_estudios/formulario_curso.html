@@ -1,0 +1,10 @@
+{% extends "control_estudios/base.html" %}
+
+{% block contenido %}
+<form action="{% url 'crear_curso' %}" method="post">
+  {% csrf_token %}
+  {{ formulario.as_p }}
+  {{ formulario.errors }}
+  <input type="submit" value="Enviar" />
+</form>
+{% endblock contenido %}
