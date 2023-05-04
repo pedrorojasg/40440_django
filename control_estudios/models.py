@@ -15,7 +15,7 @@ class Estudiante(models.Model):
     email = models.EmailField(blank=True)
     telefono = models.CharField(max_length=20, blank=True)
     dni = models.CharField(max_length=32)
-    fecha_nacimiento = models.DateField()
+    fecha_nacimiento = models.DateField(null=True)
 
     def __str__(self):
         return f"{self.nombre}, {self.apellido}"
@@ -26,7 +26,7 @@ class Profesor(models.Model):
     nombre = models.CharField(max_length=256)
     dni = models.CharField(max_length=32)
     email = models.EmailField(blank=True)
-    fecha_nacimiento = models.DateField()
+    fecha_nacimiento = models.DateField(null=True, blank=True)
     profesion = models.CharField(max_length=128)
     bio = models.TextField(blank=True)
 
@@ -36,5 +36,5 @@ class Profesor(models.Model):
 
 class Entregable(models.Model):
     nombre = models.CharField(max_length=256)
-    fecha_entrega = models.DateTimeField()
+    fecha_entrega = models.DateTimeField(auto_now_add=True)
     esta_aprobado = models.BooleanField(default=False)  # equivalente a bool (True, False)
