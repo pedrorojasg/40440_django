@@ -5,6 +5,13 @@
   <div>
     <h1>Lista de cursos</h1>
     <a href="{% url 'crear_curso' %}">Crear curso</a>
+    <br><br>
+    <form action="{% url 'buscar_cursos' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="busqueda">
+      <input type="submit" value="Buscar por comision">
+    </form>
+    <br>
     <ul>
     {% for curso in cursos %}
       <li>{{ curso.nombre }}, {{ curso.comision }}</li>

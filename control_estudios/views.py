@@ -67,7 +67,23 @@ def crear_curso(request):
         formulario = CursoFormulario()
     http_response = render(
         request=request,
-        template_name='control_estudios/formulario_curso_a_mano.html',
+        template_name='control_estudios/formulario_curso.html',
         context={'formulario': formulario}
     )
     return http_response
+
+
+def buscar_cursos(request):
+    if request.method == "POST":
+        data = request.POST
+        busqueda = data["busqueda"]
+        cursos = Curso.objects.filter(comision__contains=busqueda)
+        contexto = {
+            "cursos": cursos,
+        }
+        http_response = render(
+            request=request,
+            template_name='control_estudios/lista_cursos.html',
+            context=contexto,
+        )
+        return http_response
