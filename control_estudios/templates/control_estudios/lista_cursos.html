@@ -16,13 +16,22 @@
     <table class="table">
       <tbody>
         <tr>
+          <th>ID</th>
           <th>Nombre</th>
           <th>Comision</th>
+          <th>Eliminar</th>
         </tr>
         {% for curso in cursos %}
         <tr>
+          <td>{{ curso.id }}</td>
           <td>{{ curso.nombre }}</td>
           <td>{{ curso.comision }}</td>
+          <td>
+            <form action="{% url 'eliminar_curso' curso.id %}" method="post">
+              {% csrf_token %}
+              <input type="submit" value="eliminar"/>
+            </form
+          </td>
         </tr>
         {% endfor %}
       </tbody>
