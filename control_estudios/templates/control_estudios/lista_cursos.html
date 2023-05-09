@@ -19,6 +19,7 @@
           <th>ID</th>
           <th>Nombre</th>
           <th>Comision</th>
+          <th>Editar</th>
           <th>Eliminar</th>
         </tr>
         {% for curso in cursos %}
@@ -26,6 +27,9 @@
           <td>{{ curso.id }}</td>
           <td>{{ curso.nombre }}</td>
           <td>{{ curso.comision }}</td>
+          <td>
+            <a href="{% url 'editar_curso' curso.id %}">Editar</a>
+          </td>
           <td>
             <form action="{% url 'eliminar_curso' curso.id %}" method="post">
               {% csrf_token %}

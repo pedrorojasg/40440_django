@@ -95,3 +95,29 @@ def eliminar_curso(request, id):
         curso.delete()
         url_exitosa = reverse('lista_cursos')
         return redirect(url_exitosa)
+
+
+def editar_curso(request, id):
+    curso = Curso.objects.get(id=id)
+    if request.method == "POST":
+        formulario = CursoFormulario(request.POST)
+
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+            curso.nombre = data['nombre']
+            curso.comision = data['comision']
+            curso.save()
+
+            url_exitosa = reverse('lista_cursos')
+            return redirect(url_exitosa)
+    else:  # GET
+        inicial = {
+            'nombre': curso.nombre,
+            'comision': curso.comision,
+        }
+        formulario = CursoFormulario(initial=inicial)
+    return render(
+        request=request,
+        template_name='control_estudios/formulario_curso.html',
+        context={'formulario': formulario},
+    )
