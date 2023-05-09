@@ -1,0 +1,24 @@
+{% extends "control_estudios/base.html" %}
+
+{% block contenido %}
+
+<p>
+  <strong>Apellido:</strong> {{object.apellido}}
+</p>
+<p>
+  <strong>Nombre:</strong> {{object.nombre}}
+</p>
+<p>
+  <strong>DNI:</strong> {{object.dni}}
+</p>
+<p>
+  <strong>Telefono:</strong> {{object.telefono}}
+</p>
+<p>
+  <strong>Email:</strong> {{object.email}}
+</p>
+
+<br>
+<a href="{% url 'lista_estudiantes' %}">Volver lista</a>
+
+{% endblock contenido %}
