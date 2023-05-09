@@ -12,11 +12,22 @@
       <input type="submit" value="Buscar por comision">
     </form>
     <br>
-    <ul>
-    {% for curso in cursos %}
-      <li>{{ curso.nombre }}, {{ curso.comision }}</li>
-    {% endfor %}
-    </ul>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>Nombre</th>
+          <th>Comision</th>
+        </tr>
+        {% for curso in cursos %}
+        <tr>
+          <td>{{ curso.nombre }}</td>
+          <td>{{ curso.comision }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
   </div>
 </section>
 {% endblock contenido %}
