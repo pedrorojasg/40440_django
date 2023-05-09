@@ -4,13 +4,36 @@
 <section>
   <div>
     <h1>Lista de estudiantes</h1>
-    {% block contenido_estudiantes %}
-    {% endblock contenido_estudiantes %}
-    <ul>
-    {% for student in estudiantes %}
-      <li>{{ student.apellido }}, {{ student.nombre }}</li>
-    {% endfor %}
-    </ul>
+    <a href="{% url 'crear_estudiante' %}">Crear estudiante</a>
+    <br>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <td>Ver</td>
+          <td>Editar</td>
+          <td>Eliminar</td>
+        </tr>
+        {% for alumno in object_list %}
+        <tr>
+          <td>{{ alumno.id }}</td>
+          <td>{{ alumno.nombre }}</td>
+          <td>{{ alumno.apellido }}</td>
+          <td>
+            Ver
+          </td>
+          <td>
+            <a href="{% url 'editar_estudiante' alumno.id %}">Editar</a>
+          </td>
+          <td>Eliminar</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
   </div>
 </section>
 {% endblock contenido %}
