@@ -31,7 +31,7 @@ class Profesor(models.Model):
     bio = models.TextField(blank=True)
 
     def __str__(self):
-        return f"{self.apellido}, {self.nombre}"
+        return f"{self.nombre}, {self.apellido}"
 
 
 class Entregable(models.Model):
