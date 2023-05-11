@@ -25,3 +25,7 @@ python manage.py createsuperuser
 # Superusuario de pruebas
 username:admin
 contraseña:1234abcd
+
+# Usuarios normales
+emanuel2, emanuel1
+contraseña: sup3Rcontr123

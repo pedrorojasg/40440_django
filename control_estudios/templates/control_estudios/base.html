@@ -27,7 +27,12 @@
                 <a class="navbar-brand" href="{% url 'inicio' %}">Inicio</a>
                 <a class="navbar-brand" href="{% url 'lista_cursos' %}">Cursos</a>
                 <a class="navbar-brand" href="{% url 'lista_estudiantes' %}">Estudiantes</a>
-                <a class="btn btn-primary" href="#signup">Registro</a>
+                {% if user.is_authenticated %}
+                <a class="btn btn-warning" href="{% url 'logout' %}">Cierre sesión</a>
+                {% else %}
+                <a class="btn btn-primary" href="{% url 'login' %}">Inicio sesión</a>
+                <a class="btn btn-success" href="{% url 'registro' %}">Registro</a>
+                {% endif %}
             </div>
         </nav>
 
