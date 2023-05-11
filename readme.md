@@ -21,3 +21,7 @@ python manage.py createsuperuser
 ```
 127.0.0.1:8000/admin
 ```
+
+# Superusuario de pruebas
+username:admin
+contraseña:1234abcd

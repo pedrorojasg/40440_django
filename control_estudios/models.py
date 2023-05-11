@@ -30,6 +30,9 @@ class Profesor(models.Model):
     profesion = models.CharField(max_length=128)
     bio = models.TextField(blank=True)
 
+    class Meta:
+        verbose_name_plural = "profesores"
+
     def __str__(self):
         return f"{self.nombre}, {self.apellido}"
 
