@@ -6,26 +6,26 @@ from django.http import HttpResponse
 
 def saludar(request):
     saludo = "Hola querido usuario"
-    pagina_html = HttpResponse(saludo)
-    return pagina_html
+    http_response = HttpResponse(saludo)
+    return http_response
 
 
 def saludar_con_fecha(request):
     hoy = datetime.now()
     saludo = f"Hola querido usuario, fecha: {hoy.day}/{hoy.month}"
-    pagina_html = HttpResponse(saludo)
-    return pagina_html
+    http_response = HttpResponse(saludo)
+    return http_response
 
 
 def saludar_a_usuario(request, nombre):
     texto = f"Hola {nombre}"
-    pagina_html = HttpResponse(texto)
-    return pagina_html
+    http_response = HttpResponse(texto)
+    return http_response
 
 
 def saludar_con_html(request):
     contexto = {
-        "usuario": "Pedro"
+        "usuario": "EJEMPLO"
     }
     http_responde = render(
         request=request,
