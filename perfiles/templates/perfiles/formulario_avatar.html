@@ -1,0 +1,10 @@
+{% extends "control_estudios/base.html" %}
+
+{% block contenido %}
+<h3>Subir tu Avatar</h3>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Subir imagen"/>
+</form>
+{% endblock contenido %}
