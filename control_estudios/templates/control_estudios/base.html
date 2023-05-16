@@ -27,7 +27,22 @@
                 <a class="navbar-brand" href="{% url 'lista_cursos' %}">Cursos</a>
                 <a class="navbar-brand" href="{% url 'lista_estudiantes' %}">Estudiantes</a>
                 {% if user.is_authenticated %}
-                <a class="btn btn-warning" href="{% url 'logout' %}">Cerrar sesión</a>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div style="display: inline-flex;">
+                            <span>{{ user.username }}</span>
+                        </div>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a class="dropdown-item" href="{% url 'editar_perfil' %}">Editar mis datos</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'logout' %}"><strong>Cerrar Sesión</strong></a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
                 {% else %}
                 <a class="btn btn-primary" href="{% url 'login' %}">Iniciar sesión</a>
                 <a class="btn btn-success" href="{% url 'registro' %}">Crear nueva cuenta</a>
